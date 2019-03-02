@@ -21,6 +21,11 @@ include "includes/navigation.php";
                     <!-- Blog Entries Column -->
                     <div class="col-md-8">
 
+                        <h1 class="page-header">
+                            My Blog
+                            <small> ^^</small>
+                        </h1>
+
                         <?php
                         
                        $query = "SELECT * FROM posts ";
@@ -39,10 +44,7 @@ include "includes/navigation.php";
                     
                      ?>
 
-                            <h1 class="page-header">
-                                Page Heading
-                                <small>Secondary Text</small>
-                            </h1>
+
 
                             <!-- First Blog Post -->
                             <h2>

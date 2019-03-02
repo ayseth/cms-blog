@@ -34,6 +34,8 @@ $query = "SELECT * FROM users WHERE username = '{$username}' ";
         $_SESSION['firstname'] = $db_user_firstname;
         $_SESSION['lastname'] = $db_user_lastname;
         $_SESSION['user_role'] = $db_user_role ;
+    }
+      if($db_user_role == 'admin'){
         
         header("Location: ../admin");
          
