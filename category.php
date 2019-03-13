@@ -19,10 +19,32 @@ include "includes/navigation.php";
                 <div class="row">
 
                     <!-- Blog Entries Column -->
+
+
+                    <?php 
+
+                     if(isset($_GET['category'])) {
+                        $cat_id = $_GET['category'];
+                    }
+                
+                $query = "SELECT * FROM catagories WHERE cat_id = $cat_id";
+                                                
+                                        $select_categories_id = mysqli_query($connection, $query);
+
+                                        while($row=mysqli_fetch_assoc($select_categories_id)) {
+                                       
+                                        $cat_title = $row['cat_title'];
+                                    }
+                     ?>
+
+
                     <div class="col-md-8">
                         <h1 class="page-header">
-                            Search Results
+                            <?php echo $cat_title?>
                         </h1>
+
+
+
                         <?php
                         
                     if(isset($_GET['category'])) {
@@ -31,6 +53,13 @@ include "includes/navigation.php";
                     }
                         $query = "SELECT * FROM posts WHERE post_category_id =  $post_category_id ";
                        $select_all_posts_query = mysqli_query($connection, $query);
+
+
+                        $count = mysqli_num_rows($select_all_posts_query);
+        if ($count == 0) {
+            echo "<h1> NO RESULT </h1>";
+        } else {
+
                 while($row=mysqli_fetch_assoc($select_all_posts_query)) {
                     
                      $post_id = $row['post_id'];
@@ -75,7 +104,7 @@ include "includes/navigation.php";
 
                             <hr>
 
-                            <?php } } ?>
+                            <?php } } }?>
 
 
                     </div>
