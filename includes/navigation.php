@@ -21,6 +21,14 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
+
+
+
+
+
+
+
+
                 <!--##########################################NEWLY#######################################################3-->
                 <!--To fetch data from db for navbar-->
                 <?php
@@ -38,12 +46,11 @@
                     <!--##########################################Previously#######################################################3-->
                     <?php
                 
-                if(isset($_SESSION['user_role'])) {
-                    if(isset($_GET['p_id'])) {
-                        $the_post_id = $_GET['p_id'];
+                if(isset($_SESSION['user_role']) && $_SESSION['user_role'] == 'admin') {
+                   
                         echo "<li><a href='admin'>Admin</a></li>";
                         
-                    }
+                    
                 }
                 ?>
 
@@ -55,8 +62,23 @@
                         echo "<li><a href='admin/posts.php?source=edit_post&p_id={$the_post_id}'>Edit Post</a></li>";
                         
                     }
-                }
+               
                 ?>
+
+                   <li>
+                 <a class="right">Hey <?php
+                if(isset($_SESSION['username'])) {
+                    echo $_SESSION['username'];
+                }
+                
+                ?></a>
+             </li>
+
+<?php  } ?>
+               
+             
+
+                 
                             <!--
                 <li>
                     <a href="#">Services</a>

@@ -47,13 +47,12 @@ include "includes/navigation.php";
                      $post_date = $row['post_date'];
                      $post_image = $row['post_image'];
                      $post_content = $row['post_content'];
+                      $post_status = $row['post_status'];
+                    
+                    if($post_status == 'published') {
                     
                      ?>
 
-                            <h1 class="page-header">
-                                Page Heading
-                                <small>Secondary Text</small>
-                            </h1>
 
                             <!-- First Blog Post -->
                             <h2>
@@ -80,7 +79,7 @@ include "includes/navigation.php";
 
                             <hr>
 
-                            <?php }
+                            <?php }}
 
         }
     } ?>

@@ -18,6 +18,38 @@
     </div>
     <!--Login-->
     <div class="well">
+
+
+        <?php
+                
+                if(isset($_SESSION['username'])) {
+
+                    
+                
+                ?>
+
+
+
+
+             
+        <form action="includes/logout.php" method="post">
+            <div class="form-group">
+                <span class="btn-primary">
+                    <button class="btn btn-primary btn-lg btn-block" name="logout" type="submit">
+
+                        Logout
+                    </button>
+                </span>
+            </div>
+        </form>
+
+<?php } ?>
+
+
+
+<?php 
+if(!isset($_SESSION['username'])) {  ?>
+
         <h4>Login</h4>
         <form action="includes/login.php" method="post">
             <div class="form-group">
@@ -34,6 +66,9 @@
 
             </div>
         </form>
+
+    <?php } ?>
+        
         <!--search form-->
         <!-- /.input-group -->
     </div>
