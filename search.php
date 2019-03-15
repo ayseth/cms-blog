@@ -20,6 +20,9 @@ include "includes/navigation.php";
 
                     <!-- Blog Entries Column -->
                     <div class="col-md-8">
+ <h1 class="page-header">
+                            Search Result
+                        </h1>
 
 
                         <?php
